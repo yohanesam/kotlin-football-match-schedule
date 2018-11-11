@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Football Match Schedule</string>
-    <string name="homeTeam">Crystal Palace ajpsdjapsjdpaosd</string>
-    <string name="awayTeam">Man City</string>
-    <string name="scoreTeam">4 Vs 0</string>
+    <string name="homeTeam">Home Team</string>
+    <string name="awayTeam">Away Team</string>
+    <string name="scoreTeam">- Vs -</string>
+    <string name="matchDate">1-1-2018</string>
+    <string name="emptyString">-</string>
 </resources>

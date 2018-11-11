@@ -2,9 +2,15 @@ package com.yohanesam.footballmatchschedule.Model.Entity
 
 import com.google.gson.annotations.SerializedName
 
-data class Match (
+data class Match(
     @SerializedName("idEvent")
     var idEvent: String? = null,
+
+    @SerializedName("idHomeTeam")
+    var idHomeTeam: String? = null,
+
+    @SerializedName("idAwayTeam")
+    var idAwayTeam: String? = null,
 
     @SerializedName("strHomeTeam")
     var strHomeTeam: String? = null,
@@ -21,11 +27,11 @@ data class Match (
     @SerializedName("dateEvent")
     var dateEvent: String? = null,
 
-    @SerializedName("strHomeLineupGoalkeeper")
-    var strHomeLineupGoalkeeper: String? = null,
+    @SerializedName("intHomeShots")
+    var intHomeShots: String? = null,
 
-    @SerializedName("strAwayLineupGoalkeeper")
-    var strAwayLineupGoalkeeper: String? = null,
+    @SerializedName("intAwayShots")
+    var intAwayShots: String? = null,
 
     @SerializedName("strHomeGoalDetails")
     var strHomeGoalDetails: String? = null,
@@ -33,48 +39,21 @@ data class Match (
     @SerializedName("strAwayGoalDetails")
     var strAwayGoalDetails: String? = null,
 
-    @SerializedName("intHomeShots")
-    var intHomeShots: String? = null,
+    @SerializedName("strHomeYellowCards")
+    var strHomeYellowCards: String? = null,
 
-    @SerializedName("intAwayShots")
-    var intAwayShots: String? = null,
+    @SerializedName("strAwayYellowCards")
+    var strAwayYellowCards: String? = null,
 
-    @SerializedName("strHomeLineupDefense")
-    var strHomeLineupDefense: String? = null,
+    @SerializedName("strHomeRedCards")
+    var strHomeRedCards: String? = null,
 
-    @SerializedName("strAwayLineupDefense")
-    var awayDefense: String? = null,
-
-    @SerializedName("strHomeLineupMidfield")
-    var strAwayLineupDefense: String? = null,
-
-    @SerializedName("strAwayLineupMidfield")
-    var strAwayLineupMidfield: String? = null,
-
-    @SerializedName("strHomeLineupForward")
-    var strHomeLineupForward: String? = null,
-
-    @SerializedName("strAwayLineupForward")
-    var strAwayLineupForward: String? = null,
+    @SerializedName("strAwayRedCards")
+    var strAwayRedCards: String? = null,
 
     @SerializedName("strHomeLineupSubstitutes")
     var strHomeLineupSubstitutes: String? = null,
 
     @SerializedName("strAwayLineupSubstitutes")
-    var strAwayLineupSubstitutes: String? = null,
-
-    @SerializedName("strHomeFormation")
-    var strHomeFormation: String? = null,
-
-    @SerializedName("strAwayFormation")
-    var strAwayFormation: String? = null,
-
-    @SerializedName("strTeamBadge")
-    var strTeamBadge: String? = null,
-
-    @SerializedName("idHomeTeam")
-    var idHomeTeam: String? = null,
-
-    @SerializedName("idAwayTeam")
-    var idAwayTeam: String? = null
+    var strAwayLineupSubstitutes: String? = null
 )

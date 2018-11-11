@@ -3,7 +3,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp">
+        android:layout_margin="20dp">
 
     <RelativeLayout
             android:layout_width="match_parent"
@@ -16,7 +16,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="match date"
-                android:layout_margin = "12dp"/>
+                android:layout_margin="12dp"/>
 
         <LinearLayout
                 android:layout_width="match_parent"
@@ -40,7 +40,6 @@
                         android:textAlignment="textEnd"
                 />
             </LinearLayout>
-
 
 
             <TextView
@@ -70,7 +69,6 @@
                         android:textAlignment="textStart"
                 />
             </LinearLayout>
-
 
 
         </LinearLayout>

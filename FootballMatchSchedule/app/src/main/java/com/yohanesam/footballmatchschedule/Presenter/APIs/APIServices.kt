@@ -1,21 +1,30 @@
 package com.yohanesam.footballmatchschedule.Presenter.APIs
 
-import com.yohanesam.footballmatchschedule.Model.TheResponces.MatchResponse
+import com.yohanesam.footballmatchschedule.Model.Entites.Team
+import com.yohanesam.footballmatchschedule.Model.Entity.Match
+import com.yohanesam.footballmatchschedule.Model.TheResponces.MatchJSONArray
 import io.reactivex.Observable
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 interface APIServices {
     @GET("eventspastleague.php?id=4399")
-    fun getLastMatch(): Observable<MatchResponse>
+    fun getLastMatch(): Observable<MatchJSONArray>
 
-    @GET("https://www.thesportsdb.com/api/v1/json/1/eventsnextleague.php?id=4399")
-     fun getNextMatch(): Observable<MatchResponse>
+    @GET("eventsnextleague.php?id=4399")
+    fun getNextMatch(): Observable<MatchJSONArray>
+
+    @GET("lookupevent.php?id={matchId}")
+    fun getSelectedMatch(@Path("matchId") matchId: String?): Observable<Match>
+
+    @GET("lookupteam.php?id={teamId}")
+    fun getSelectedTeam(@Path("teamId") teamId: String?): Observable<Team>
 
     companion object Factory {
-        fun create() : APIServices {
+        fun create(): APIServices {
             val retrofit = Retrofit.Builder()
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())

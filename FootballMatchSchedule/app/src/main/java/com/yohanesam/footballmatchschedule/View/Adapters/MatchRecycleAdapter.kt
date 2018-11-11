@@ -9,7 +9,11 @@ import com.yohanesam.footballmatchschedule.Model.Entity.Match
 import com.yohanesam.footballmatchschedule.R
 import kotlinx.android.synthetic.main.match_schedule_row.view.*
 
-class MatchRecycleAdapter (private val context : Context, private val matches : List<Match>/*, private val listener : (Match) -> Unit*/) :
+class MatchRecycleAdapter(
+    private val context: Context,
+    private val matches: List<Match>,
+    private val listener: (Match) -> Unit
+) :
     RecyclerView.Adapter<MatchRecycleAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, position: Int): ViewHolder {
@@ -22,29 +26,31 @@ class MatchRecycleAdapter (private val context : Context, private val matches : 
 
     }
 
-    override fun getItemCount(): Int { return matches.size }
+    override fun getItemCount(): Int {
+        return matches.size
+    }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        holder.bindData(matches[position]/*, listener*/)
+        holder.bindData(matches[position], listener)
 
     }
 
-    class ViewHolder(private val containerView: View) : RecyclerView.ViewHolder(containerView){
+    class ViewHolder(private val containerView: View) : RecyclerView.ViewHolder(containerView) {
 
-        fun bindData(match: Match/*, listener: (Match) -> Unit*/) {
+        fun bindData(match: Match, listener: (Match) -> Unit) {
             containerView.tvMatchScheduleDate.text = match.dateEvent
 
-            if(match.intHomeScore == null) {
+            if (match.intHomeScore == null) {
                 match.intHomeScore = ""
                 match.intAwayScore = ""
             }
 
             containerView.tvHomeTeam.text = match.strHomeTeam
             containerView.tvAwayTeam.text = match.strAwayTeam
-            containerView.tvScoreOfTheMatch.text = match.intHomeScore+" VS "+match.intAwayScore
+            containerView.tvScoreOfTheMatch.text = match.intHomeScore + " - " + match.intAwayScore
 
-//            containerView.setOnClickListener { listener(match) }
+            containerView.setOnClickListener { listener(match) }
 
         }
 
