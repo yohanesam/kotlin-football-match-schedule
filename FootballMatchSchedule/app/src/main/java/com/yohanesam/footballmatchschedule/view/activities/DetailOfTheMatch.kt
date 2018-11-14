@@ -1,6 +1,5 @@
 package com.yohanesam.footballmatchschedule.view.activities
 
-import android.content.Context
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
@@ -16,11 +15,11 @@ import com.yohanesam.footballmatchschedule.presenter.apis.APIRepository
 import com.yohanesam.footballmatchschedule.presenter.coroutines.MatchDetailCoroutine
 import com.yohanesam.footballmatchschedule.presenter.coroutines.TeamDetailCoroutine
 import com.yohanesam.footballmatchschedule.R
-import com.yohanesam.footballmatchschedule.helper.database
 import com.yohanesam.footballmatchschedule.view.interfaces.MatchView
 import com.yohanesam.footballmatchschedule.view.interfaces.TeamView
 import kotlinx.android.synthetic.main.activity_detail_of_the_match.*
-import org.jetbrains.anko.design.coordinatorLayout
+
+
 
 class DetailOfTheMatch : AppCompatActivity(), MatchView, TeamView {
 
@@ -45,14 +44,13 @@ class DetailOfTheMatch : AppCompatActivity(), MatchView, TeamView {
         idMatch = intent.getStringExtra("ID_MATCH")
         idHomeTeam = intent.getStringExtra("ID_HOME_TEAM")
         idAwayTeam = intent.getStringExtra("ID_AWAY_TEAM")
+        data = intent.getParcelableExtra("EVENT")
 
         val req = APIRepository()
         val gson = Gson()
 
         matchDetailCoroutine = MatchDetailCoroutine(this, req, gson)
         teamDetailCoroutine = TeamDetailCoroutine(this, req, gson)
-
-        if (matchDetailCoroutine::addToFavorite.isI)
 
         matchDetailCoroutine.getSelectedMatch(idMatch)
         teamDetailCoroutine.getSelectedTeam(idHomeTeam, idAwayTeam)
@@ -87,7 +85,7 @@ class DetailOfTheMatch : AppCompatActivity(), MatchView, TeamView {
 //                    matchDetailCoroutine.removeFromFavorite(pbProgressDetailActivity, this, data)
 //                }
 //
-//                isFavorite = !isFavorite
+                isFavorite = !isFavorite
                 setFavorite()
 
                 true

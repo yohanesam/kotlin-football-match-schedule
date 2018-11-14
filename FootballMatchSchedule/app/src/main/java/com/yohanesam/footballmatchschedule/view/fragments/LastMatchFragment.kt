@@ -43,7 +43,7 @@ class LastMatchFragment : Fragment(), MatchView, SwipeRefreshLayout.OnRefreshLis
 
         adapter = MatchRecycleAdapter(this.context!!, matches) {
             startActivity<DetailOfTheMatch>(
-                "ID_MATCH" to it.idEvent, "ID_HOME_TEAM" to it.idHomeTeam, "ID_AWAY_TEAM" to it.idAwayTeam
+                "ID_MATCH" to it.idEvent, "ID_HOME_TEAM" to it.idHomeTeam, "ID_AWAY_TEAM" to it.idAwayTeam, "EVENT" to it
             )
         }
 

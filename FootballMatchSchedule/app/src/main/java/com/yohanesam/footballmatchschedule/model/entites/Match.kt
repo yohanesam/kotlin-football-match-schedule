@@ -36,7 +36,7 @@ data class Match(
 
         const val FAVORITE_MATCH = "FAVORITE_MATCH"
         const val ID = "ID"
-        const val ID_EVENT = "ID"
+        const val ID_EVENT = "ID_EVENT"
         const val DATE = "DATE"
 
         const val HOME_TEAM_ID = "HOME_TEAM_ID"
