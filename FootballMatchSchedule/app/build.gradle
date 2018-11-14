@@ -31,6 +31,10 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
+    // anko commons
+    implementation "org.jetbrains.anko:anko-commons:$anko_version"
+    implementation "org.jetbrains.anko:anko-design:$anko_version"
+
     // design support
     implementation 'com.android.support:design:28.0.0'
 
@@ -54,6 +58,11 @@ dependencies {
     implementation "org.jetbrains.anko:anko-sdk15-coroutines:$anko_version"
     implementation "org.jetbrains.anko:anko-appcompat-v7-coroutines:$anko_version"
     implementation "org.jetbrains.anko:anko-design-coroutines:$anko_version"
+    implementation "org.jetbrains.anko:anko-sqlite:$anko_version"
+}
+
+androidExtensions {
+    experimental = true
 }
 
 kotlin {

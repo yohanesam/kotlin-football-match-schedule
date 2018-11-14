@@ -15,7 +15,7 @@ import com.yohanesam.footballmatchschedule.presenter.coroutines.MatchCoroutine
 import com.yohanesam.footballmatchschedule.R
 import com.yohanesam.footballmatchschedule.view.activities.DetailOfTheMatch
 import com.yohanesam.footballmatchschedule.view.Adapter.MatchRecycleAdapter
-import com.yohanesam.footballmatchschedule.view.util.MatchView
+import com.yohanesam.footballmatchschedule.view.interfaces.MatchView
 import kotlinx.android.synthetic.main.util_fragment_activity.*
 import org.jetbrains.anko.support.v4.startActivity
 import org.jetbrains.anko.support.v4.toast
@@ -73,13 +73,13 @@ class NextMatchFragment : Fragment(), MatchView, SwipeRefreshLayout.OnRefreshLis
 
     override fun isLoad() {
 
-        pbProgressLoading.visibility = View.VISIBLE
+        srlPullNavigateUpRefresh.isRefreshing = true
 
     }
 
     override fun stopLoad() {
 
-        pbProgressLoading.visibility = View.GONE
+        srlPullNavigateUpRefresh.isRefreshing = false
 
     }
 

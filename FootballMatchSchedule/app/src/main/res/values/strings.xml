@@ -9,5 +9,6 @@
     <string name="team">Team</string>
     <string name="favorites">Favorites</string>
     <string name="match">Matches</string>
+    <string name="add_to_favorite">Add to Favorite</string>
 
 </resources>

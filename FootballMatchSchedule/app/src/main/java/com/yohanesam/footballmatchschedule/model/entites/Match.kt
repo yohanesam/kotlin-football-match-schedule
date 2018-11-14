@@ -1,59 +1,62 @@
 package com.yohanesam.footballmatchschedule.model.Entity
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 import com.google.gson.annotations.SerializedName
 
+@Parcelize
 data class Match(
-    @SerializedName("idEvent")
+    var id: Long? = null,
     var idEvent: String? = null,
-
-    @SerializedName("idHomeTeam")
-    var idHomeTeam: String? = null,
-
-    @SerializedName("idAwayTeam")
-    var idAwayTeam: String? = null,
-
-    @SerializedName("strHomeTeam")
-    var strHomeTeam: String? = null,
-
-    @SerializedName("strAwayTeam")
-    var strAwayTeam: String? = null,
-
-    @SerializedName("intHomeScore")
-    var intHomeScore: String? = null,
-
-    @SerializedName("intAwayScore")
-    var intAwayScore: String? = null,
-
-    @SerializedName("dateEvent")
     var dateEvent: String? = null,
 
-    @SerializedName("intHomeShots")
+    // Home Team Item
+    var idHomeTeam: String? = null,
+    var strHomeTeam: String? = null,
+    var intHomeScore: String? = null,
     var intHomeShots: String? = null,
-
-    @SerializedName("intAwayShots")
-    var intAwayShots: String? = null,
-
-    @SerializedName("strHomeGoalDetails")
     var strHomeGoalDetails: String? = null,
-
-    @SerializedName("strAwayGoalDetails")
-    var strAwayGoalDetails: String? = null,
-
-    @SerializedName("strHomeYellowCards")
     var strHomeYellowCards: String? = null,
-
-    @SerializedName("strAwayYellowCards")
-    var strAwayYellowCards: String? = null,
-
-    @SerializedName("strHomeRedCards")
     var strHomeRedCards: String? = null,
-
-    @SerializedName("strAwayRedCards")
-    var strAwayRedCards: String? = null,
-
-    @SerializedName("strHomeLineupSubstitutes")
     var strHomeLineupSubstitutes: String? = null,
 
-    @SerializedName("strAwayLineupSubstitutes")
+    // Home Team Item
+    var idAwayTeam: String? = null,
+    var strAwayTeam: String? = null,
+    var intAwayScore: String? = null,
+    var intAwayShots: String? = null,
+    var strAwayGoalDetails: String? = null,
+    var strAwayYellowCards: String? = null,
+    var strAwayRedCards: String? = null,
     var strAwayLineupSubstitutes: String? = null
-)
+
+): Parcelable {
+
+    companion object {
+
+        const val FAVORITE_MATCH = "FAVORITE_MATCH"
+        const val ID = "ID"
+        const val ID_EVENT = "ID"
+        const val DATE = "DATE"
+
+        const val HOME_TEAM_ID = "HOME_TEAM_ID"
+        const val HOME_TEAM_NAME = "HOME_TEAM_NAME"
+        const val HOME_TEAM_SCORE = "HOME_TEAM_SCORE"
+        const val HOME_TEAM_SHOT = "HOME_TEAM_SHOT"
+        const val HOME_TEAM_GOAL_DETAIL = "HOME_TEAM_GOAL_DETAIL"
+        const val HOME_TEAM_YELLOW_CARDS = "HOME_TEAM_YELLOW_CARDS"
+        const val HOME_TEAM_RED_CARDS = "HOME_TEAM_RED_CARDS"
+        const val HOME_TEAM_LINEUP_SUBSTITUTE = "HOME_TEAM_LINEUP_SUBSTITUTE"
+
+        const val AWAY_TEAM_ID = "AWAY_TEAM_ID"
+        const val AWAY_TEAM_NAME = "AWAY_TEAM_NAME"
+        const val AWAY_TEAM_SCORE = "AWAY_TEAM_SCORE"
+        const val AWAY_TEAM_SHOT = "AWAY_TEAM_SHOT"
+        const val AWAY_TEAM_GOAL_DETAIL = "AWAY_TEAM_GOAL_DETAIL"
+        const val AWAY_TEAM_YELLOW_CARDS = "AWAY_TEAM_YELLOW_CARDS"
+        const val AWAY_TEAM_RED_CARDS = "AWAY_TEAM_RED_CARDS"
+        const val AWAY_TEAM_LINEUP_SUBSTITUTE = "AWAY_TEAM_LINEUP_SUBSTITUTE"
+
+    }
+
+}

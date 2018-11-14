@@ -4,7 +4,7 @@ import com.google.gson.Gson
 import com.yohanesam.footballmatchschedule.model.responsesdata.TeamJSONArray
 import com.yohanesam.footballmatchschedule.presenter.apis.APIRepository
 import com.yohanesam.footballmatchschedule.presenter.apis.SportAPI
-import com.yohanesam.footballmatchschedule.view.util.TeamView
+import com.yohanesam.footballmatchschedule.view.interfaces.TeamView
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.async
 import org.jetbrains.anko.coroutines.experimental.bg
